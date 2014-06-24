@@ -14,6 +14,8 @@ Then add `knockout-tippy.js` to your project.
 
 Include the script on your page (either via a normal script tag or via an AMD loader). Then bind it to an element.
 
+Specify a template name to use a specific template for the tooltip text.
+
 ###Bind tool tip
 
 ```html
