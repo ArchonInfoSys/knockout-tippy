@@ -1,6 +1,6 @@
 {
   "name": "knockout-tippy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "knockout.tippy.js",
   "description": "Simple knockout binding that allows the user to bind tooltips to an element",
   "keywords": [
