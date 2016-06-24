@@ -1,0 +1,31 @@
+{
+  "name": "knockout.tippy",
+  "version": "3.0.0",
+  "description": "Simple knockout binding that allows the user to bind tooltips to an element",
+  "main": "knockout.tippy.js",
+  "scripts": {
+    "lint": "eslint . --format=unix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/civicsource/knockout.tippy.git"
+  },
+  "keywords": [
+    "knockout",
+    "tooltip"
+  ],
+  "author": "CivicSource",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/civicsource/knockout.tippy/issues"
+  },
+  "homepage": "https://github.com/civicsource/knockout.tippy#readme",
+  "devDependencies": {
+    "babel-eslint": "6.x",
+    "eslint": "2.x",
+    "eslint-plugin-filenames": "1.x"
+  },
+  "dependencies": {
+    "knockout": "3.x"
+  }
+}
