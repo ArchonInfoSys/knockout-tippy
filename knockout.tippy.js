@@ -1,5 +1,5 @@
 var ko = require("knockout");
-require("css!less!./tippy.less");
+require("./tippy.less");
 
 ko.bindingHandlers.tippy = {
 	init: function () {
