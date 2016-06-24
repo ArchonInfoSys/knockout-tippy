@@ -1,0 +1,117 @@
+@media screen {
+	.tippy {
+		@sz-tippy-width: 20em;
+
+		@sz-tippy-stem: .5em;
+		@sz-tippy-stem-pos-h: (1/4);
+
+		@sz-tippy-offset-h: -((@sz-tippy-width * @sz-tippy-stem-pos-h) - (@sz-tippy-stem / 2));
+		@sz-tippy-offset-v: .5em;
+
+		@sz-tippy-stem-pos-h-result: (100% * @sz-tippy-stem-pos-h);
+		@sz-tippy-stem-pos-v: 0;
+
+		@sz-tippy-stem-offset-h: -(@sz-tippy-stem * 2);
+		@sz-tippy-stem-offset-v: -(@sz-tippy-padding + (@sz-tippy-stem * 1.5));
+
+		@sz-tippy-padding: .5em;
+
+		@tm-tippy-transition: (1s/8);
+
+		@cl-tippy-bg: fadeout(#000,20%);
+		@cl-tippy-bg-fallback: mix(#fff,#000,20%);
+
+		position: relative;
+		display: inline-block;
+      	vertical-align: baseline;
+
+		&__ {
+			&hint__ {
+				&indicator {
+					color: hsl(200, 100%, 40%);
+				}
+			}
+
+			&content {
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				max-height: 0;
+				z-index: 100;
+				width: 0;
+				margin-top: @sz-tippy-offset-v;
+				margin-left: @sz-tippy-offset-h;
+				overflow: hidden;
+				color: #eee;
+				text-align: left;
+				background-color: @cl-tippy-bg-fallback;
+				background-color: @cl-tippy-bg;
+				border-radius: 5px;
+				opacity: 0;
+				transition: none;
+
+				blockquote {
+					border: none;
+				}
+
+				a {
+					color: hsl(202.5, 66.7%, 60%);
+				}
+
+				>p {
+					margin: 1em;
+				}
+
+				&:before,
+				&:after {
+					position: absolute;
+					left: @sz-tippy-stem-pos-h-result;
+					z-index: -1;
+					display: block;
+					width: 0;
+                  	height: 0;
+					margin-top: @sz-tippy-stem;
+					margin-left: @sz-tippy-stem-offset-h;
+					border: 0 solid transparent;
+					content: '';
+					opacity: 0;
+					transition: none;
+				}
+			}
+		}
+
+		&:hover,
+		&:focus {
+			.tippy__content {
+				max-height: 99em;
+				width: @sz-tippy-width;
+				padding: @sz-tippy-padding;
+				overflow: visible;
+				cursor: auto;
+				opacity: 1;
+				transition-property: opacity;
+				transition-duration: @tm-tippy-transition;
+				transition-delay: (@tm-tippy-transition / 2);
+
+				&:before {
+					margin-top: @sz-tippy-stem-offset-v;
+					border-bottom-color: @cl-tippy-bg-fallback;
+					border-bottom-color: @cl-tippy-bg;
+					border-width: @sz-tippy-stem;
+					opacity: 1;
+					transition: all @tm-tippy-transition (@tm-tippy-transition * 1.5);
+				}
+
+				&:after {
+					@sz-hover-forgiveness-w: 4em;
+					@sz-hover-forgiveness-h: 2em;
+					top: 0;
+					width: @sz-hover-forgiveness-w;
+					height: @sz-hover-forgiveness-h;
+					margin-top: -(@sz-hover-forgiveness-h * 2 / 3);
+					margin-left: -(@sz-hover-forgiveness-w / 2);
+				}
+			}
+		}
+	}
+}

@@ -2,23 +2,22 @@
 
 > A simple knockout binding that allows you to add a tool tip to an element.
 
-##Install with [Bower](http://bower.io/)
+##Installation
 
 ```
-bower install knockout-tippy
+npm install knockout.tippy
 ```
-
-Then add `knockout-tippy.js` to your project.
 
 ##How to Use
 
-Include the script on your page (either via a normal script tag or via an AMD loader). Then bind it to an element.
+Include in your bundle with a build system such as webpack or browserify.
+Use [`less-loader`](https://github.com/webpack/less-loader) and [`css-loader`](https://github.com/webpack/css-loader) to include styles.
 
 Specify a template name to use a specific template for the tooltip text.
 
-###Bind tool tip
+###Bind tooltip
 
 ```html
-<a href="/remove" data-bind="tippy: 'template-name'">Remove</a>
+<a href="/remove" data-bind="tippy: 'template-name'">Hi!</a>
 ```
 
